@@ -1,14 +1,33 @@
 {
   "name": "initThis",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is to study JS, with TDD applied.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack",
+    "lint": "./node_modules/.bin/eslint app/*.js"
   },
-  "keywords": [],
+  "husky": {
+    "hooks": {
+      "prepush": "npm run lint",
+      "precommit": "npm run lint",
+      "commit-msg": "echo 'Congratulations!'"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LNeeevs/initThis.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "course",
+    "study"
+  ],
   "author": "Lucas Neves <lucasneevs@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/LNeeevs/initThis",
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
